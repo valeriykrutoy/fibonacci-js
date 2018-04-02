@@ -1,5 +1,6 @@
-var userNumone = +prompt('Метод 1');
-alert(fib(userNumone));
+const n = parseInt(prompt('Введите любое число'));
+
+document.write('Рекурсивный метод ' + fib(n) + '<br>' + '<br>');
 
 function fib(n) {
     if (n == 1 || n == 2)
@@ -7,29 +8,25 @@ function fib(n) {
     else
         return fib(n - 2) + fib(n - 1);
 }
+document.write('Цикличный метод ' + fibo(n) + '<br>' + '<br>');
 
-var userNumtwo = +prompt('Метод 2 ');
-alert(fibo(userNumtwo));
-
-function fibo(num) {
+function fibo(n) {
     var fibPrev = 0,
         fibPrePrev = 1,
         fibNext = 1;
-    for (var i = 2; i <= num; i++) {
+    for (var i = 2; i <= n; i++) {
         fibNext = fibPrev + fibPrePrev;
         fibPrev = fibPrePrev;
         fibPrePrev = fibNext;
     }
     return fibNext;
 }
+document.write('Через массив ' + fibonacci(n) + '<br>' + '<br>');
 
-var userNumtree = +prompt('Метод 3');
-alert(fibonacci(userNumtree));
-
-function fibonacci(number) {
+function fibonacci(n) {
     var sequence = [1, 1];
-    for (var i = 2; i < number; i++) {
+    for (var i = 2; i < n; i++) {
         sequence[i] = sequence[i - 1] + sequence[i - 2];
     }
-    return sequence[number - 1];
+    return sequence[n - 1];
 }
