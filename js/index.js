@@ -11,10 +11,10 @@ function fib(n) {
 document.write('Цикличный метод ' + fibo(n) + '<br>' + '<br>');
 
 function fibo(n) {
-    var fibPrev = 0,
+    let fibPrev = 0,
         fibPrePrev = 1,
         fibNext = 1;
-    for (var i = 2; i <= n; i++) {
+    for (let i = 2; i <= n; i++) {
         fibNext = fibPrev + fibPrePrev;
         fibPrev = fibPrePrev;
         fibPrePrev = fibNext;
@@ -24,8 +24,8 @@ function fibo(n) {
 document.write('Через массив ' + fibonacci(n) + '<br>' + '<br>');
 
 function fibonacci(n) {
-    var sequence = [1, 1];
-    for (var i = 2; i < n; i++) {
+    let sequence = [1, 1];
+    for (let i = 2; i < n; i++) {
         sequence[i] = sequence[i - 1] + sequence[i - 2];
     }
     return sequence[n - 1];
